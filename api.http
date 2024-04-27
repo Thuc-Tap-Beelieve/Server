@@ -3,10 +3,19 @@ POST http://localhost:5000/api/v1/auth/register
 Content-Type: application/json
 
 {
-    "email": "admi2n@gmail.com",
+    "email": "thanhtoan1@gmail.com",
     "password": "123456",
     "mobile": "0334937670", 
-    "name" : "Toan thanh", 
-    "address": "12312512312"
+    "name" : "Doan Thanh Toàn", 
+    "address": "76/6 TML , Q2"
     
+}
+###
+
+POST http://localhost:5000/api/v1/auth/login
+Content-Type: application/json
+
+{
+    "email": "thanhtoan1@gmail.com",
+    "password": "123456"
 }
