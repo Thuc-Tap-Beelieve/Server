@@ -33,7 +33,7 @@ export const register = ({ email, password, mobile, name, address }) =>
       resolve({
         err: response[1] ? 0 : 1,
         mess: response[1] ? "Register Succesfully" : "Email is used",
-        token,
+        "access token": token ? `Bearer ${token} ` : null,
       });
       resolve({
         err: 1,
