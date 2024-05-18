@@ -1,9 +1,10 @@
 import db from "../models";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
-import { raw } from "mysql2";
+
 const hashPassword = (password) =>
   bcrypt.hashSync(password, bcrypt.genSaltSync(8));
+
 export const register = ({ email, password, mobile, name, address }) =>
   new Promise(async (resolve, reject) => {
     try {

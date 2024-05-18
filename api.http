@@ -8,7 +8,7 @@ POST http://localhost:5000/api/v1/auth/register
 Content-Type: application/json
 
 {
-    "email": "thanhtoan4@gmail.com",
+    "email": "thanhtoan1@gmail.com",
     "password": "123456",
     "mobile": "0334937670", 
     "name" : "Doan Thanh Toàn", 
@@ -24,3 +24,8 @@ Content-Type: application/json
     "email": "thanhtoan1@gmail.com",
     "password": "123456"
 }
+
+
+###
+GET http://localhost:5000/api/v1/user
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJ0aGFuaHRvYW4xQGdtYWlsLmNvbSIsInJvbGVfY29kZSI6IlIzIiwiaWF0IjoxNzE2MDM3NDkyLCJleHAiOjE3MTYyMTAyOTJ9.-qmsrUMYVN-zHLb9ztT0mK2cpByUfGIS4zWY-yC8oa4 
