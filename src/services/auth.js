@@ -83,3 +83,34 @@ export const login = ({ email, password }) =>
       reject(error);
     }
   });
+
+export const loginSucces = (id) =>
+  new Promise(async (resolve, reject) => {
+    try {
+      const response = await db.User.findOne({
+        where: { id },
+        raw: true,
+      });
+      console.log(response);
+      const token = response
+        ? jwt.sign(
+            {
+              id: response.id,
+              email: response.email,
+              role_code: response.role_code,
+            },
+            process.env.JWT_SECRET,
+            {
+              expiresIn: "5d",
+            }
+          )
+        : null;
+      resolve({
+        err: token ? 0 : 3,
+        mess: token ? "OK" : "User not found",
+        token,
+      });
+    } catch (error) {
+      reject(error);
+    }
+  });

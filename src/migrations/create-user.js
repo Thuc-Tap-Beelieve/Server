@@ -1,5 +1,5 @@
 "use strict";
-const { DataTypes } = require("sequelize");
+const { DataTypes, Sequelize } = require("sequelize");
 const { sequelize } = require("../models");
 
 /** @type {import('sequelize-cli').Migration} */
@@ -8,9 +8,9 @@ module.exports = {
     await queryInterface.createTable("Users", {
       id: {
         allowNull: false,
-        autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER,
+        type: DataTypes.UUID,
+        defaultValue: Sequelize.UUIDV4,
       },
       name: { type: Sequelize.STRING },
       password: { type: Sequelize.STRING },
@@ -18,6 +18,7 @@ module.exports = {
       role_code: { type: Sequelize.STRING, defaultValue: "R3" },
       address: { type: Sequelize.STRING },
       mobile: { type: Sequelize.STRING },
+      typeLogin: { type: Sequelize.STRING, defaultValue: "Đăng ký" },
       createdAt: {
         allowNull: false,
         type: "TIMESTAMP",

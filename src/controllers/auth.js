@@ -26,3 +26,16 @@ export const login = async (req, res) => {
     return internalSeverError(res);
   }
 };
+
+export const loginSucces = async (req, res) => {
+  const { id } = req?.body;
+  try {
+    if (!id) {
+      return badRequest(error.details[0]?.message, res);
+    }
+    const response = await services.loginSucces(id);
+    return res.status(200).json(response);
+  } catch (error) {
+    return internalSeverError(res);
+  }
+};
