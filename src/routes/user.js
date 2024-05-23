@@ -4,7 +4,12 @@ import verifyToken from "../middleware/verify_token";
 import { isAdmin } from "../middleware/verify_role";
 const router = express.Router();
 
-router.use(verifyToken);
+// router.use(verifyToken);
 // router.use(isAdmin);
-router.get("/", controllers.getCurrent);
+router.get("/", verifyToken, controllers.getCurrent);
+
+router.get("/get-all", controllers.getAlluser);
+
+router.delete("/:id", controllers.dellUser);
+
 module.exports = router;

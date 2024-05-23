@@ -12,3 +12,25 @@ export const getCurrent = async (req, res) => {
     return internalSeverError(res);
   }
 };
+
+// tất cả User
+export const getAlluser = async (req, res) => {
+  try {
+    const response = await services.getAlluser();
+    return res.status(200).json(response);
+  } catch (error) {
+    return internalSeverError(res);
+  }
+};
+
+//
+// tất cả User
+export const dellUser = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const response = await services.delUser(id);
+    return res.status(200).json(response);
+  } catch (error) {
+    return internalSeverError(res);
+  }
+};

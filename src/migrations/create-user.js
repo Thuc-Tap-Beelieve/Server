@@ -19,6 +19,8 @@ module.exports = {
       address: { type: Sequelize.STRING },
       mobile: { type: Sequelize.STRING },
       typeLogin: { type: Sequelize.STRING, defaultValue: "Đăng ký" },
+      // avatarUrl: { type: Sequelize.STRING },
+      // tokenLogin: { type: Sequelize.STRING },
       createdAt: {
         allowNull: false,
         type: "TIMESTAMP",

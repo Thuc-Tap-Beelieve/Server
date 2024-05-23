@@ -28,4 +28,9 @@ Content-Type: application/json
 
 ###
 GET http://localhost:5000/api/v1/user
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJ0aGFuaHRvYW4xQGdtYWlsLmNvbSIsInJvbGVfY29kZSI6IlIzIiwiaWF0IjoxNzE2MDM3NDkyLCJleHAiOjE3MTYyMTAyOTJ9.-qmsrUMYVN-zHLb9ztT0mK2cpByUfGIS4zWY-yC8oa4 
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImY1NTM1Mjg2LWVkMDMtNDUyZS1iNmRjLWQ4NjM2ZjEwYjRhZCIsImVtYWlsIjoidGhhbmh0b2FuMUBnbWFpbC5jb20iLCJyb2xlX2NvZGUiOiJSMyIsImlhdCI6MTcxNjQ1OTU2MywiZXhwIjoxNzE2NjMyMzYzfQ.gDdNvknKVTpA_S1QvUtUnLEIcJFP7OJhL28ojKaJoJ0 
+###
+GET http://localhost:5000/api/v1/user/get-all
+
+### 
+DELETE http://localhost:5000/api/v1/user/103721027100415228450
