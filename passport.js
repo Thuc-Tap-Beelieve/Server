@@ -3,6 +3,9 @@ require("dotenv").config();
 const passport = require("passport");
 import { email } from "./src/helper/joi_chema";
 import db from "./src/models";
+
+import crypto from "crypto";
+import bcrypt from "bcryptjs";
 passport.use(
   new GoogleStrategy(
     {
@@ -13,7 +16,8 @@ passport.use(
     },
     async (req, accessToken, refreshToken, profile, cb) => {
       console.log(profile);
-
+      const defaultPassword = crypto.randomBytes(16).toString("hex");
+      const hashedPassword = await bcrypt.hash(defaultPassword, 10);
       if (profile?.id) {
         const response = await db.User.findOrCreate({
           where: {
@@ -24,6 +28,7 @@ passport.use(
             email: profile.emails[0]?.value,
             typeLogin: profile?.provider,
             name: profile?.displayName,
+            password: hashedPassword,
           },
         });
       }
