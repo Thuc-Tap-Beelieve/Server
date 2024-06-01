@@ -30,10 +30,12 @@ Content-Type: application/json
 GET http://localhost:5000/api/v1/user
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImY1NTM1Mjg2LWVkMDMtNDUyZS1iNmRjLWQ4NjM2ZjEwYjRhZCIsImVtYWlsIjoidGhhbmh0b2FuMUBnbWFpbC5jb20iLCJyb2xlX2NvZGUiOiJSMyIsImlhdCI6MTcxNjQ1OTU2MywiZXhwIjoxNzE2NjMyMzYzfQ.gDdNvknKVTpA_S1QvUtUnLEIcJFP7OJhL28ojKaJoJ0 
 ###
-GET http://localhost:5000/api/v1/user/get-all
+GET http://localhost:5000/api/v1/user
 
 ### 
-DELETE http://localhost:5000/api/v1/user/103721027100415228450
+DELETE http://localhost:5000/api/v1/user/e8738609-05e2-4d59-a0a2-2886e767e72d
 
 ###
-GET http://localhost:5000/api/v1/product/get-all
+GET http://localhost:5000/api/v1/product/
+###
+PUT http://localhost:5000/api/v1/product/update
