@@ -1,6 +1,9 @@
 import joi from "joi";
 
-export const email = joi.string().pattern(new RegExp("gmail.com$")).required();
+export const email = joi
+  .string()
+  .pattern(new RegExp("\\.(com|vn)$"))
+  .required();
 export const password = joi.string().min(6).required();
 export const mobile = joi
   .string()
@@ -13,3 +16,12 @@ export const mobile = joi
   });
 export const name = joi.string();
 export const address = joi.string();
+//
+export const id_pr = joi.string().required();
+export const priceProduct = joi.number().required();
+export const productName = joi.string().required();
+export const code_cat = joi.string().uppercase().alphanum().required();
+export const imageProduct = joi.string().required();
+export const productColor = joi.string().required();
+export const size = joi.string();
+export const soluong = joi.number().required();

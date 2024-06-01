@@ -10,7 +10,10 @@ module.exports = {
       productName: {
         type: Sequelize.STRING,
       },
-      id_cat: {
+      code_cat: {
+        type: Sequelize.STRING,
+      },
+      sub_cat: {
         type: Sequelize.STRING,
       },
       pricesaleProduct: {
