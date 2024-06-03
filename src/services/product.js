@@ -67,16 +67,17 @@ export const delProduct = ({ id_pr }) =>
   });
 //
 
-export const getAllproduct = () =>
-  new Promise(async (resolve, reject) => {
-    try {
-      const response = await db.Products.findAll();
-      resolve({
-        err: 0,
-        mess: "Success",
-        userData: response,
-      });
-    } catch (error) {
-      reject(error);
-    }
-  });
+export const getAllproduct = async ({ skip, limit }) => {
+  try {
+    const products = await db.Products.findAll({
+      offset: skip,
+      limit: limit,
+    });
+    return {
+      products,
+      total: await db.Products.count(),
+    };
+  } catch (error) {
+    throw error;
+  }
+};

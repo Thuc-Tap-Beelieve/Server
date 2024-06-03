@@ -99,7 +99,11 @@ export const delProduct = async (req, res) => {
 // Get All
 export const getAllproduct = async (req, res) => {
   try {
-    const response = await services.getAllproduct();
+    const PAGE_SIZE = 5; // Số lượng sản phẩm trên mỗi trang
+    const page = req.query.page ? parseInt(req.query.page) : 1;
+    const skip = (page - 1) * PAGE_SIZE;
+
+    const response = await services.getAllproduct({ skip, limit: PAGE_SIZE });
     return res.status(200).json(response);
   } catch (error) {
     return internalSeverError(res);
