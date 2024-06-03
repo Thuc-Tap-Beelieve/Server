@@ -74,6 +74,7 @@ export const login = ({ email, password }) =>
           ? "password is wrong"
           : "email is not registered",
         "access token": token ? `Bearer ${token} ` : null,
+        role_code: response.role_code,
       });
       resolve({
         err: 1,
@@ -91,7 +92,6 @@ export const loginSucces = (id) =>
         where: { id },
         raw: true,
       });
-      console.log(response);
       const token = response
         ? jwt.sign(
             {
@@ -109,6 +109,7 @@ export const loginSucces = (id) =>
         err: token ? 0 : 3,
         mess: token ? "OK" : "User not found",
         token,
+        role_code: response.role_code,
       });
     } catch (error) {
       reject(error);

@@ -18,9 +18,10 @@ module.exports = (sequelize, DataTypes) => {
   }
   Products.init(
     {
+      stt: { primaryKey: true, autoIncrement: true, type: DataTypes.INTEGER },
       id_pr: {
         allowNull: false,
-        primaryKey: true,
+
         type: DataTypes.STRING,
       },
       productName: DataTypes.STRING,
@@ -28,6 +29,9 @@ module.exports = (sequelize, DataTypes) => {
       sub_cat: DataTypes.STRING,
       pricesaleProduct: DataTypes.INTEGER,
       priceProduct: DataTypes.INTEGER,
+      goWhere: DataTypes.STRING,
+      styleFilter: DataTypes.STRING,
+      eventFilter: DataTypes.STRING,
       imageProduct: DataTypes.STRING,
       descriptionProduct: DataTypes.STRING,
       productColor: DataTypes.STRING,

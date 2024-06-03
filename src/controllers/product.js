@@ -7,7 +7,11 @@ import {
   imageProduct,
   productColor,
   size,
+  sub_cat,
   soluong,
+  goWhere,
+  styleFilter,
+  eventFilter,
 } from "../helper/joi_chema";
 import * as services from "../services";
 import { badRequest, internalSeverError } from "../middleware/handle_errors";
@@ -25,8 +29,12 @@ export const createNewProduct = async (req, res) => {
         productName,
         imageProduct,
         productColor,
+        sub_cat,
         size,
         soluong,
+        goWhere,
+        styleFilter,
+        eventFilter,
       })
       .validate({ ...req.body, imageProduct: fileData?.path });
     if (error) {

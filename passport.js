@@ -15,7 +15,7 @@ passport.use(
       passReqToCallback: true,
     },
     async (req, accessToken, refreshToken, profile, cb) => {
-      console.log(profile);
+      // console.log(profile);
       const defaultPassword = crypto.randomBytes(16).toString("hex");
       const hashedPassword = await bcrypt.hash(defaultPassword, 10);
       if (profile?.id) {

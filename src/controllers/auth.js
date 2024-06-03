@@ -34,6 +34,7 @@ export const loginSucces = async (req, res) => {
       return badRequest(error.details[0]?.message, res);
     }
     const response = await services.loginSucces(id);
+    // console.log(response);
     return res.status(200).json(response);
   } catch (error) {
     return internalSeverError(res);

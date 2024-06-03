@@ -12,7 +12,7 @@ module.exports = {
       name_subcategory: {
         type: Sequelize.STRING,
       },
-      value_cat: {
+      codevalue_cat: {
         type: Sequelize.STRING,
       },
       createdAt: {

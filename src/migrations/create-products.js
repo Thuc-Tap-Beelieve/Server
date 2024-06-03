@@ -3,8 +3,12 @@
 module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable("Products", {
-      id_pr: {
+      stt: {
         primaryKey: true,
+        autoIncrement: true,
+        type: Sequelize.INTEGER,
+      },
+      id_pr: {
         type: Sequelize.STRING,
       },
       productName: {
@@ -16,6 +20,10 @@ module.exports = {
       sub_cat: {
         type: Sequelize.STRING,
       },
+      goWhere: { type: Sequelize.STRING },
+      styleFilter: { type: Sequelize.STRING },
+      eventFilter: { type: Sequelize.STRING },
+      imageProduct: { type: Sequelize.STRING },
       pricesaleProduct: {
         type: Sequelize.INTEGER,
       },

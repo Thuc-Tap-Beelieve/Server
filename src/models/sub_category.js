@@ -15,7 +15,7 @@ module.exports = (sequelize, DataTypes) => {
     {
       id_sub_category: DataTypes.STRING,
       name_subcategory: DataTypes.STRING,
-      value_cat: DataTypes.STRING,
+      codevalue_cat: DataTypes.STRING,
     },
     {
       sequelize,
