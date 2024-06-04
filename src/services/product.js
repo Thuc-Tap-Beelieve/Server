@@ -1,7 +1,21 @@
 import db from "../models";
 const cloudinary = require("cloudinary").v2;
-
+import { Op } from "sequelize"; // Import Op từ Sequelize
 //
+export const getAllproduct = async ({ skip, limit }) => {
+  try {
+    const products = await db.Products.findAll({
+      offset: skip,
+      limit: limit,
+    });
+    return {
+      products,
+      total: await db.Products.count(),
+    };
+  } catch (error) {
+    throw error;
+  }
+};
 
 export const createNewProduct = (body, fileData) =>
   new Promise(async (resolve, reject) => {
@@ -66,18 +80,3 @@ export const delProduct = ({ id_pr }) =>
     }
   });
 //
-
-export const getAllproduct = async ({ skip, limit }) => {
-  try {
-    const products = await db.Products.findAll({
-      offset: skip,
-      limit: limit,
-    });
-    return {
-      products,
-      total: await db.Products.count(),
-    };
-  } catch (error) {
-    throw error;
-  }
-};

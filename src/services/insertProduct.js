@@ -18,6 +18,9 @@ export const insertData = () =>
             priceProduct: product.PriceProduct,
             soluong: product.Soluong,
             size: product.Size,
+            styleFilter: product.Style,
+            goWhere: product.Gowhere,
+            eventFilter: product.Event,
           },
         });
 

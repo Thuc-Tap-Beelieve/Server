@@ -32,13 +32,17 @@ export const getOne = (userID) =>
     }
   });
 
-export const getAlluser = () =>
+export const getAlluser = ({ skip, limit }) =>
   new Promise(async (resolve, reject) => {
     try {
-      const response = await db.User.findAll();
+      const response = await db.User.findAll({
+        offset: skip,
+        limit: limit,
+      });
       resolve({
         err: 0,
         mess: "Success",
+        total: await db.Products.count(),
         userData: response,
       });
     } catch (error) {

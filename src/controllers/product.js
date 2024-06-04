@@ -99,7 +99,7 @@ export const delProduct = async (req, res) => {
 // Get All
 export const getAllproduct = async (req, res) => {
   try {
-    const PAGE_SIZE = 5; // Số lượng sản phẩm trên mỗi trang
+    const PAGE_SIZE = 2; // Số lượng sản phẩm trên mỗi trang
     const page = req.query.page ? parseInt(req.query.page) : 1;
     const skip = (page - 1) * PAGE_SIZE;
 

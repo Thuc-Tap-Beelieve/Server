@@ -16,7 +16,11 @@ export const getCurrent = async (req, res) => {
 // tất cả User
 export const getAlluser = async (req, res) => {
   try {
-    const response = await services.getAlluser();
+    const PAGE_SIZE = 4; // Số lượng sản phẩm trên mỗi trang
+    const page = req.query.page ? parseInt(req.query.page) : 1;
+    const skip = (page - 1) * PAGE_SIZE;
+
+    const response = await services.getAlluser({ skip, limit: PAGE_SIZE });
     return res.status(200).json(response);
   } catch (error) {
     return internalSeverError(res);
